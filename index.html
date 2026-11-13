@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-LibLog - Administrasi Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📚 E-LibLog Perpustakaan</h1>
+        <p>Sistem Pencatatan Peminjaman & Pengembalian Buku Siswa</p>
+    </header>
+
+    <div class="container">
+        <!-- Bagian Kiri: Formulir Input Peminjaman -->
+        <section class="form-section">
+            <h2>Catat Peminjaman Baru</h2>
+            <form id="form-pinjam">
+                <div class="input-group">
+                    <label for="nama">Nama Siswa</label>
+                    <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="kelas">Kelas</label>
+                    <input type="text" id="kelas" placeholder="Contoh: XI RPL 1" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="judul-buku">Judul Buku</label>
+                    <input type="text" id="judul-buku" placeholder="Contoh: Laskar Pelangi" required>
+                </div>
+
+                <button type="submit" class="btn-simpan">+ Simpan Peminjaman</button>
+            </form>
+        </section>
+
+        <!-- Bagian Kanan: Tabel Riwayat Peminjaman -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Daftar Peminjaman Buku</h2>
+                <input type="text" id="cari-data" placeholder="🔍 Cari nama siswa atau buku..." onkeyup="cariData()">
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Siswa</th>
+                            <th>Kelas</th>
+                            <th>Judul Buku</th>
+                            <th>Tgl Pinjam</th>
+                            <th>Jatuh Tempo</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabel-body">
+                        <!-- Data akan muncul otomatis dari JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
